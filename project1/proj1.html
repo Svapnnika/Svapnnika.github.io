@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Store</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        .header {
+            background-color: black;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 15px;
+        }
+
+        .header a {
+            text-decoration: none;
+        }
+
+        .header li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: brown;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            padding: 60px;
+            align-items: center;
+            height: 300px;
+            background-color: teal;
+        }
+
+        .row .box {
+            border: solid 3px black;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 0px;
+            height: 250px;
+        }
+
+        button:hover {
+            color: brown;
+        }
+
+        .row2 {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: bisque;
+        }
+        .row2 .box{
+            width: 800px;
+            padding: 10px;
+            background-color: rosybrown;
+            margin: 10px;
+            height: 300px;
+        }
+        footer{
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="header">
+            <div>
+                <h1>My Store</h1>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="box">
+            <img src="imgages/1.jpg" width="200px" />
+            <h3>Product 1</h3>
+            <h4>This is description about product 1</h4>
+            Price:$30 <button>Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="imgages/2.jpg" width="220px" />
+            <h3>Product 2</h3>
+            <h4>This is description about product 2</h4>
+            Price:$32 <button>Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="imgages/3.jpg" width="250px" />
+            <h3>Product 3</h3>
+            <h4>This is description about product 3</h4>
+            Price:$20 <button>Add to Cart</button>
+        </div>
+    </div>
+    <div class="row2">
+        <div>
+            <img src="imgages/meeting.jpg" width="500px" />
+        </div>
+        <div class="box">
+            <h3>Heading 1</h3>
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis beatae dolor molestiae et veritatis
+                vero distinctio magni consequatur autem, nemo reprehenderit maxime quae fuga voluptas, deleniti nisi
+                omnis quidem? Harum, natus dolorum, neque itaque voluptatem nihil ad optio ea commodi consequuntur, nam
+                fugit? Ut quod eligendi harum recusandae aut aperiam vitae dolorem quidem magni commodi accusamus quae
+                enim perspiciatis consectetur quos ad, eveniet incidunt accusantium numquam cumque impedit itaque nam.
+                Nostrum sit a quis voluptate! Dicta dolores id blanditiis quas?</h4>
+        </div>
+    </div>
+    <div class="row2">
+        <div class="box">
+            <h3>Heading 2</h3>
+            <h4>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis beatae dolor molestiae et veritatis
+                vero distinctio magni consequatur autem, nemo reprehenderit maxime quae fuga voluptas, deleniti nisi
+                omnis quidem? Harum, natus dolorum, neque itaque voluptatem nihil ad optio ea commodi consequuntur, nam
+                fugit? Ut quod eligendi harum recusandae aut aperiam vitae dolorem quidem magni commodi accusamus quae
+                enim perspiciatis consectetur quos ad, eveniet incidunt accusantium numquam cumque impedit itaque nam.
+                Nostrum sit a quis voluptate! Dicta dolores id blanditiis quas?</h4>
+        </div>
+        <div>
+            <img src="imgages/meeting.jpg" width="500px" />
+        </div>
+    </div>
+    <div class="footer">
+        <footer>@Copyright 2024. All rights reserved.</footer>
+    </div>
+</body>
+
+</html>

@@ -1,43 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Temp 4</title>
 </head>
+<style>
+    thead{
+        background-color: blueviolet;
+
+    }
+    tbody{
+        background-color: pink;
+
+    }
+    tfoot{
+        background-color: coral;
+    }
+</style>
+
 <body>
     <h1>Temp 4</h1>
     <svg width="400" height="400">
-        <circle
-        cx="30"
-        cy="40"
-        r="30"
-        stroke="teal"
-        stroke-width="4"
-        fill="hotpink"
-        />
-        <rect
-        x="80"
-        y="15"
-        width="60"
-        height="60"
-        stroke="teal"
-        stroke-width="4"
-        fill="hotpink"
-        />
-        <ellipse
-        cx="130"
-        cy="150"
-        rx="85"
-        ry="55"
-        stroke="teal"
-        stroke-width="4"
-        fill="hotpink"
-        />
-        <text
-        fill="black" font-size="20" font-family="Verdana"
-        x="120" y="150">
-        Svap
+        <circle cx="30" cy="40" r="30" stroke="teal" stroke-width="4" fill="hotpink" />
+        <rect x="80" y="15" width="60" height="60" stroke="teal" stroke-width="4" fill="hotpink" />
+        <ellipse cx="130" cy="150" rx="85" ry="55" stroke="teal" stroke-width="4" fill="hotpink" />
+        <text fill="black" font-size="20" font-family="Verdana" x="120" y="150">
+            Svap
         </text>
     </svg>
     <hr>
@@ -45,8 +35,65 @@
         <source src="audio/summer-memories-270159.mp3">
     </audio>
     <hr>
-    <audio controls>
-        <source src="audio/summer-memories-270159.mp3">
-    </audio>
+    <video controls>
+        <source src="" type="video/mpeg">
+    </video>
+    <table border="2">
+        <thead>
+        <tr>
+            <th>Name</th>
+            <th>class</th>
+            <th>sec</th>
+            <th>city</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td>svap</td>
+            <td>13</td>
+            <td>B</td>
+            <td>Hyd</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <td>sai</td>
+            <td>12</td>
+            <td>B</td>
+            <td>Hyd</td>
+        </tr>
+    </tbody>
+    <tbody>
+        <tr>
+            <td>Ganesh</td>
+            <td>14</td>
+            <td>B</td>
+            <td>Bng</td>
+        </tr>
+    </tbody>
+    <tfoot>
+        <tr>
+            <td colspan="3">Total</td>
+            <td>50</td>
+        </tr>
+    </tfoot>
+    </table>
+    <details>
+        <summary>Chap 1</summary>
+        <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, libero quibusdam omnis eum similique,
+            atque harum magnam repudiandae iste eos voluptatum voluptate a illum ad autem consequuntur ipsa, quasi sed?
+        </p>
+    </details>
+    <details>
+        <summary>Chap 2</summary>
+        <p style="text-align: justify;">Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus, libero quibusdam omnis eum similique,
+            atque harum magnam repudiandae iste eos voluptatum voluptate a illum ad autem consequuntur ipsa, quasi sed?
+        </p>
+    </details>
+    <tr>
+        <marquee style="background-color: black; color: white;" 
+        direction="right">Hello svap</marquee>
+    </tr>
 </body>
+
 </html>

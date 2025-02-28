@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catch the Smiley Game</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background-color: white;
+            overflow: hidden;
+        }
+        #basket, #flower {
+            position: absolute;
+        }
+        h1 {
+            text-align: center;
+        }
+        #score {
+            text-align: center;
+            font-size: 24px;
+            color: #0095DD;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <h1>Catch the flower</h1>
+        <div id="score">Score: 0</div>
+    </div>
+    <img src="assets/basket.jpg" width="150px" height="100px" id="basket"/>
+    <img src="assets/flower.jpg" width="300px" height="100px" id="flower"/>
+    <script>
+        const basket = document.getElementById('basket');
+        const smiley = document.getElementById('flower');
+        const scoreDisplay = document.getElementById('score');
+        let points = 0;
+        let left = 0;
+        let down = 0;
+        let t = 0;
+        let l = 0;
+        document.body.onkeydown = (e) => {
+            if (e.key == "ArrowRight") left += 5;
+            if (e.key == "ArrowDown") down += 5;
+            if (e.key == "ArrowLeft") left -= 5;
+            if (e.key == "ArrowUp") down -= 5;
+            basket.style.left = left + "px";
+            basket.style.top = down + "px";
+        };
+        function flowerMove() {
+            t++;
+            if (t > window.innerHeight) {
+                t = 1;
+                l = Math.random() * (window.innerWidth - flower.width);
+            }
+            flower.style.top = t + "px";
+            flower.style.left = l + "px";
+            if (
+                t + flower.height >= down &&
+                t <= down + basket.height &&
+                l + flower.width >= left &&
+                l <= left + basket.width
+            ) {
+                points++;
+                scoreDisplay.textContent = "Points: " + points;
+                resetFlower();
+            }
+
+            setTimeout(flowerMove, 10);
+        }
+
+        function resetFlower() {
+            t = 1;
+            l = Math.random() * (window.innerWidth - flower.width);
+        }
+
+        flowerMove();
+    </script>
+</body>
+</html>

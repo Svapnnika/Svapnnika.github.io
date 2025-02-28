@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>facebook</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            margin: 0;
+            background-color: gray;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            position:relative;
+
+        }
+
+        h1 {
+            color: white;
+            margin-bottom: 20px;
+            font-size: 36px;
+            text-shadow: 4px 4px 6px rgba(0, 0, 0, 0.6);
+        }
+
+        .login-box {
+            color: white;
+            padding: 10px;
+            border-radius: 8px;
+            box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.4);
+            width: 400px;
+            text-align: center;
+            background-color: black;
+        }
+
+        .login-box h1 {
+            margin-bottom: 20px;
+        }
+
+        .login-box input {
+            padding: 8px;
+            margin: 8px 0;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            display: inline-block;
+            width: calc(50% - 16px);
+            box-sizing: border-box;
+        }
+
+        .login-box button {
+            padding: 10px;
+            background-color: teal;
+            color: black;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .login-box button:hover {
+            background-color: whitesmoke;
+            box-shadow: 30px 30px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .dob-heading,
+        .gender-heading {
+            margin-right: 0px;
+            margin-bottom: 10px;
+            font-size: 14px;
+            width: 100%;
+            text-align: left;
+        }
+
+        .dob-container,
+        .gender-container {
+            display: flex;
+            align-items: space-between;
+            justify-content: flex-start;
+            margin-top: 20px;
+            text-align: left;
+            width: 100%;
+        }
+
+        .dob-container select {
+            margin-right: 20px;
+            padding: 2px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            width: 100%;
+            box-sizing: border-box;
+            cursor: pointer;
+            width: 300px;
+        }
+
+        .gender-container input {
+            margin-left: 5px;
+        }
+
+        .gender-container label {
+            display: flex;
+            align-items: center;
+            margin-right: 20px;
+            padding: 3px;
+            border: 2px solid #ccc;
+            border-radius: 4px;
+            background-color: white;
+            color: black;
+            cursor: pointer;
+            width: 300px;
+            font-size: medium;
+
+        }
+
+        .facebook {
+            color: blue;
+        }
+
+        h1 {
+            margin: 20px;
+            padding: 20px;
+            font-size: 100px
+        }
+
+        h1 {
+            display: flex;
+        }
+
+        .mobile input,
+        .newpass input {
+            display: inline-block;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin: 8px 0px;
+            box-sizing: border-box;
+        }
+        .para{
+            font-size:smaller;
+            text-align: justify;
+        }
+        footer {
+            background-color: black;
+            color: white;
+            text-align: center;
+            padding: 2px;
+            width: 100%;
+            position: fixed;
+            bottom: 0;
+            font-weight: bolder;
+        }
+    </style>
+</head>
+
+<body>
+    <h1 style="color:blue">facebook</h1>
+    <div class="login-box">
+        <h2>Create a new account</h2>
+        <p>It's quick and easy</p>
+        <hr>
+        <div class="name">
+            <input type="text" placeholder="First name" required>
+            <input type="text" placeholder="Surname" required> <br> <br>
+        </div>
+        <div class="dob-heading">
+            Date of birth
+            <span>&#63;</span>
+            <div class="dob-container">
+                <select name="day" required>
+                    <option value="">Day</option>
+                </select>
+                <select name="month" required>
+                    <option value="">Month</option>
+                </select>
+                <select name="year" required>
+                    <option value="">Year</option>
+                </select> <br> <br>
+            </div> <br>
+            <div class="gender-heading">Gender <span>&#63;</span></div>
+            <div class="gender-container">
+                <label><input type="radio" name="gender" value="Female" required>Female</label>
+                <label><input type="radio" name="gender" value="male" required>Male</label>
+                <label><input type="radio" name="gender" value="Custom" required>Custom</label>
+            </div> <br>
+        </div>
+        <div class="mobile">
+            <input type="text" placeholder="Mobile number or email address" required>
+        </div>
+        <div class="newpass">
+            <input type="text" placeholder="New password" required>
+        </div>
+        <div class="para">
+            <p>People who use our service may have uploaded your contact information to Facebook. Learn more.
+                <br> <br>
+                By clicking Sign Up, you agree to our Terms, Privacy Policy and Cookies Policy. You may receive SMS
+                notifications from us and can opt out at any time.</p>
+        </div>
+        <button type="submit"><b>Sign Up</b></button>
+        <p style="text-decoration: underline; cursor: pointer; font-weight: bold;">Already have an account ? 
+            <a href="index.html"></a></p>
+    </div>
+    <script>
+        let str = "";
+        for(let i = 1; i <= 31; i++){
+            str += '<option> ${i} </option>';
+        }
+        day.innerHTML = str;
+        str="";
+        for(let i = 1; i <= 12; i++){
+            str += '<option> ${i} </option>';
+        }
+        month.innerHTML = str;
+        str="";
+        for(let i = 1; i <= 31; i++){
+            str += '<option> ${i} </option>';
+        }
+        year.innerHTML = str;
+    </script>
+    <!-- <footer>
+        <p>&copy; 2025 Facebook. All rights reserved.</p>
+    </footer> -->
+</body>
+</html>

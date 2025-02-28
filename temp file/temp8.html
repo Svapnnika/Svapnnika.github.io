@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <script>
+        function showData(){
+            //alert("Hi")
+            let name = document.getElementById("name").value
+            let email = document.getElementById("email").value
+            let dob = document.getElementById("dob").value
+            //cls.innerHTML = name + " , " + email + " , " + dob
+            cls.innerHTML = `${name} , ${email} , ${dob}`
+        }
+    </script>
+</head>
+<body>
+    <h1><marquee>User Registration Form</marquee></h1>
+    <p><input type="text" id="name" placeholder="Enter name"></p>
+    <p><input type="text" id="email" placeholder="Enter mail address"></p>
+    <p><input type="password" id="pwd" placeholder="Enter password"></p>
+    <p><input type="datetime-local" id="dob"></p>
+    <button onclick="showData()">Register</button>
+    <hr>
+    <div id="cls"></div>
+    </div>
+</body>
+</html>

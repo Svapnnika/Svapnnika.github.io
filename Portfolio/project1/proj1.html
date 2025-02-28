@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Store</title>
+    <style>
+        * {
+            margin: 0px;
+        }
+
+        .header {
+            background-color: black;
+            justify-content: space-between;
+            display: flex;
+            align-items: center;
+            color: white;
+            padding: 15px;
+        }
+
+        .header a {
+            text-decoration: none;
+        }
+
+        .header li {
+            display: inline-block;
+            padding: 10px;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: brown;
+        }
+
+        .row {
+            display: flex;
+            justify-content: center;
+            padding: 60px;
+            align-items: center;
+            height: 300px;
+            background-color: teal;
+        }
+
+        .row .box {
+            border: solid 3px black;
+            padding: 40px;
+            margin: 20px;
+            border-radius: 0px;
+            height: 250px;
+        }
+
+        button:hover {
+            color: brown;
+        }
+
+        .row2 {
+            display: flex;
+            justify-content: center;
+            padding: 20px;
+            background-color: bisque;
+        }
+
+        .row2 .box {
+            width: 800px;
+            padding: 10px;
+            background-color: rosybrown;
+            margin: 10px;
+            height: 300px;
+        }
+
+        footer {
+            background: black;
+            color: white;
+            text-align: center;
+            padding: 15px;
+        }
+    </style>
+</head>
+
+<body>
+    <div>
+        <div class="header">
+            <div>
+                <h1>My Store</h1>
+            </div>
+            <div>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Services</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Login</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="box">
+            <img src="images/kitkat.jpg" width="100px" height="200px" />
+            <h3>Kitkat Thickshake</h3>
+            <h4>This is description about product 1</h4>
+            Price:$30 <button>Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="images/chacolate icecream.webp" width="100px" height="200px" />
+            <h3>Chacolate icecream</h3>
+            <h4>This is description about product 2</h4>
+            Price:$32 <button>Add to Cart</button>
+        </div>
+        <div class="box">
+            <img src="images/falooda.jpg" width="100px" height="200px" />
+            <h3>Falooda</h3>
+            <h4>This is description about product 3</h4>
+            Price:$20 <button>Add to Cart</button>
+        </div>
+    </div>
+    <div class="row2">
+        <div>
+            <img src="images/menu.webp" width="230px" />
+        </div>
+        <div class="box">
+            <h3 style="text-decoration: underline;">Menu</h3><br>
+            <h4>Here are some ice cream menu items from various stores: <br> <br>
+
+                Van Leeuwen Ice Cream: Offers over 32 flavors and quarterly <br> <br>
+                Salt & Straw: Known for small-batch, chef-driven ice cream. They offer rotating monthly flavors and a
+                dairy-free option. <br> <br>
+                Braum’s Ice Cream & Dairy Store: Serves a variety of ice cream flavors, including rocky road, Belgian
+                chocolate, and cookies & cream. <br> <br>
+                Bruster's Ice Cream: Features over 150 homemade ice cream flavors, including peanut butter cup sundae
+                and chocolate raspberry truffle. <br> <br>
+                Graeter’s Ice Cream: Offers creamy mascarpone ice cream filled with Oreo cookies and signature chocolate
+                chips.
+            </h4>
+        </div>
+    </div>
+    <div class="row2">
+        <div class="box">
+            <h3 style="text-decoration: underline;">Ambience</h3> <br>
+            <h4>It’s a place that combines taste, tradition, and social experience in a unique setting designed to
+                delight customers of all ages. <br>
+                Whether you’re indulging in a classic cone🍧 or exploring innovative flavors, an ice cream parlor is a
+                destination that promises sweetness and convenience. <br>
+                The ambiance and atmosphere of these parlors significantly contribute to creating a memorable visit. <br>
+
+                From retro diners to minimalist modern designs, ice cream parlors often adopt unique themes to create a
+                specific nostalgic or whimsical vibe. Some common themes include: <br>
+
+                Retro diner <br>
+                Vintage ice cream parlor <br>
+                Beach or tropical theme <br>
+                Candy or sweets shop <br>
+                Farm or country-style parlor <br>
+            </h4>
+        </div>
+        <div>
+            <img src="images/ambience.jpg" width="495px" />
+        </div>
+    </div>
+    <div class="footer">
+        <footer>@Copyright 2024. All rights reserved.</footer>
+    </div>
+</body>
+
+</html>

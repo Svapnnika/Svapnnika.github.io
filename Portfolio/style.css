@@ -102,8 +102,8 @@
     text-align: left;
   }
  #projects{
-  height: 300px;
-  padding: 50px;
+  height: 500px;
+  padding: 0px;
   margin: 0px;
  }
  #Skills{
@@ -116,7 +116,7 @@
   padding: 50px;
  }
  .box{
-  height: 180px;
+  height: 300px;
   border: 2px solid black;
   transform: translateY(-15px);
  }
@@ -124,7 +124,9 @@
     padding: 10px;
     margin: 8px;
   }
-
+  .box a{
+    align-content: center;
+  }
   .footer {
     padding: 10px;
     margin: 0px;

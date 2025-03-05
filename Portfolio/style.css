@@ -23,7 +23,7 @@
     height: 100%;
   }
   a:hover{
-    color: black;
+    color: white;
     text-decoration: underline;
   }
   #part1
@@ -34,7 +34,7 @@
     flex-direction: column;
     align-items: center;
     padding-right: 25px;
-    background-color: black;
+    background-color: rgb(54, 51, 51);
 }
 .caro {
   font-size: 24px;
@@ -61,7 +61,7 @@
     margin-bottom: 50px;
 }
   .header-row {
-    background-color: bisque;
+    background-color: black;
     color: white;
     display: flex;
     justify-content: space-between;
@@ -90,7 +90,7 @@
 
   .row {
     padding: 200px;
-    height: 50%;
+    height: 80%;
   }
   .b{
     height: 60px;
@@ -98,7 +98,7 @@
     padding: 15px;
   }
   h1{
-    color: black;
+    color: white;
     text-align: left;
   }
  #projects{
@@ -116,7 +116,9 @@
   padding: 50px;
  }
  .box{
-  height: 100px;
+  height: 180px;
+  border: 2px solid black;
+  transform: translateY(-15px);
  }
   .row .box {
     padding: 10px;

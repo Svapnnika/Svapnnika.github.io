@@ -15,12 +15,16 @@
 .container {
     position: fixed;
     overflow: auto;
-    top: 0;
+    /* top: 0;
     left: 0;
     bottom: 0;
-    right: 0;
+    right: 0; */
     scroll-behavior: smooth;
     height: 100%;
+    width: 100%;
+    /* max-width: 1200px; */
+    /* margin: 0 auto; */
+    /* padding: 20px; */
   }
   a:hover{
     color: white;
@@ -33,6 +37,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
     padding-right: 25px;
     background-color: rgb(54, 51, 51);
 }
@@ -41,25 +46,36 @@
   font-weight: bold;
   color: white;
   text-align: center;
-  margin: 10px;
-  width: 100%;
+  /* margin: 10px;
+  width: 100%; */
 }
 .caro-text{
   display:inline-block;
   animation: fade 4s linear infinite;
 }
-
+.caro-image img {
+  max-width: 100%;
+  height: auto;
+}
 #info
 {
     margin-top: 80px;
-    display: flex; /* Make the container a flexbox */
-    align-items: center; /* Align items vertically center */
-    gap: 200px; /* Space between text and image */
+    display: flex;
+    flex-direction: column;
+    align-items: center; 
+    text-align: center;
+    gap: 50px; 
     text-align: right;
     padding: 0px;
     color: white;
     margin-bottom: 50px;
+    margin-top: 80px;
 }
+#info img {
+  max-width: 100%;
+  height: auto;
+}
+
   .header-row {
     background-color: black;
     color: white;
@@ -68,6 +84,12 @@
     align-items: center;
     position: sticky;
     top: 0px;
+    padding: 10px;
+  }
+
+  .header-row ul {
+    display: flex;
+    list-style: none;
   }
 
   .header-row .box {
@@ -78,6 +100,7 @@
     display: inline;
     padding: 5px;
     font-size: larger;
+    margin: 0 10px;
   }
 
   .header-row a {
@@ -91,6 +114,11 @@
   .row {
     padding: 200px;
     height: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    margin: 20px 0;
   }
   .b{
     height: 60px;
@@ -98,7 +126,7 @@
     padding: 15px;
   }
   h1{
-    color: white;
+    color: rgb(36, 33, 33);
     text-align: left;
   }
  #projects{
@@ -109,17 +137,42 @@
  #Skills{
   padding: 50px;
  }
- #About{
+ #About {
   padding: 50px;
- }
+  display: flex;
+  flex-direction: row; 
+  justify-content: center; 
+  align-items: center; 
+  flex-wrap: wrap; 
+}
+
+#About img {
+  margin: 10px;
+  max-width: 100px;
+  height: auto;
+}
  #Contact{
   padding: 50px;
  }
  .box{
   height: 300px;
-  border: 2px solid black;
   transform: translateY(-15px);
+  flex: 1 1 calc(33.333% - 20px);
+  margin: 10px;
+  padding: 20px;
+  border: 2px solid black;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
  }
+ 
+.box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+ .box img {
+  max-width: 100%;
+  height: 200px;
+}
   .row .box {
     padding: 10px;
     margin: 8px;
@@ -142,7 +195,24 @@
     color: white;
     border: none;
     border-radius: 5%;
+    cursor: pointer;
   }
   button:hover{
     background-color: black;
   }
+  .linkedin-button {
+    width: 200px;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px; 
+}
+
+.linkedin-button:hover {
+    transform: scale(1.05); 
+}

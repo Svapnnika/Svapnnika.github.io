@@ -6,23 +6,54 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>My Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 
 <body>
     <div class="container">
         <div class="header-row">
-            <h1>Svapnnika's Portfolio</h1> <br>
+            <h1 style="color: aliceblue;">Svapnnika's Portfolio</h1> <br>
             <div class="b">
                 <ul>
                     <li><a href="#Home">Home</a></li>
-                    <li><a href="#Projects">Projects</a></li>
-                    <li><a href="#Services">Services</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#Skills">Services</a></li>
                     <li><a href="#About">About</a></li>
                     <li><a href="#Contact">Contact</a></li>
                 </ul>
             </div>
         </div>
-        <div id="part1">
+        <div id="part1" style="display: flex; align-items: center;">
+            <div id="info" style="flex: 1;">
+                <pre>
+                <div class="caro">
+                    <span class="caro-text"></span>
+                </div>
+                </pre>
+                <div>
+                    <div class="linkedin-button">
+                        <a href="https://www.linkedin.com/in/svapnnika-marri-22bab6242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                            <button>
+                                <i class="fab fa-linkedin" style="margin-right: 8px;"></i> LinkedIn Profile
+                            </button>
+                        </a>
+                    </div>
+                    <div class="linkedin-button">
+                        <a href="https://github.com/Svapnnika" target="_blank">
+                            <button>
+                                <i class="fab fa-github" style="margin-right: 8px;"></i> GitHub Profile
+                            </button>
+                        </a>
+                    </div>
+                </div>
+                <div style="flex: 1;">
+                    <img src="pic.jpg" alt="svapnnika" height="300px" width="400px">
+                </div>
+            </div>
+            
+        </div>
+        
+        <!-- <div id="part1">
             <div id="info">
                 <pre>
                 <div class="caro">
@@ -32,8 +63,20 @@
                 <div>
                     <img src="pic.jpg" alt="svapnnika" height="300px" width="400px">
                 </div>
+                <div>
+                    <a href="https://www.linkedin.com/in/svapnnika-marri-22bab6242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
+                        <button  class="linkedin-button">
+                            <i class="fab fa-linkedin" style="margin-right: 8px;"></i> LinkedIn Profile
+                        </button>
+                    </a>
+                    <a href="https://github.com/Svapnnika" target="_blank">
+                        <button  class="linkedin-button">
+                            <i class="fab fa-github" style="margin-right: 8px;"></i> GitHub  Profile
+                        </button>
+                    </a>
+                </div>
             </div>
-        </div>
+        </div> -->
         <div id="projects" class="row" style="background-color: teal; text-align: justify;">
             <h1 style="text-decoration: underline;">My Projects</h1> <br>
             <div style="display: flex;">
@@ -61,6 +104,10 @@
                     <img src="car.webp" height="240px" width="200px">
                     <h3><a href=" https://svapnnika.github.io/my-app-b-build/">Project 6</a></h3> <br>
                 </div>
+                <div class="box">
+                    <img src="watch.webp" height="240px" width="200px">
+                    <h3><a href=" https://svapnnika.github.io/project-7-build/">Project 7</a></h3> <br>
+                </div>
             </div>
         </div>
         <div id="Skills" class="row" style="background-color: rosybrown; text-align: justify ;">
@@ -68,23 +115,23 @@
             <div style="display: flex">
                 <div class="box">
                     <h3 style="text-decoration: underline;">Full stack Developer</h3> <br>
+                    <img src="full stack.webp" alt="developer" style="width: 300px; height:200px">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, totam. Debitis porro molestiae
-                        odit aspernatur. Excepturi officia molestias architecto explicabo.
+                       FULL STACK WEB DEVELOPER
                     </p>
                 </div>
                 <div class="box">
                     <h3 style="text-decoration: underline;">Mobile App Developer</h3> <br>
+                    <img src="mobile app.webp" alt="developer"  style="width: 300px; height:200px">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, totam. Debitis porro molestiae
-                        odit aspernatur. Excepturi officia molestias architecto explicabo.
+                        MOBILE APP DEVELOPER
                     </p>
                 </div>
                 <div class="box">
                     <h3 style="text-decoration: underline;">Backened Developer</h3> <br>
+                    <img src="backend.webp" alt="developer" style="width: 300px; height:200px">
                     <p>
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, totam. Debitis porro molestiae
-                        odit aspernatur. Excepturi officia molestias architecto explicabo.
+                        BACKEND DEVELOPER
                     </p>
                 </div>
             </div>
@@ -106,9 +153,9 @@
             <h1 style="text-decoration: underline;">Contact</h1>
             <div style="display:flex">
                 <div class="box">
-                    <p><input type="text" placeholder="Enter Name: "></p> <br>
-                    <p><input type="email" placeholder="Enter Email: "></p> <br>
-                    <p><textarea row="10" cols="60" placeholder="Enter message"></textarea></p> <br>
+                    <p>Name:<input type="text" placeholder="Enter Name: "></p> <br>
+                    <p>Email:<input type="email" placeholder="Enter Email: "></p> <br>
+                    <p>Enter message:<textarea row="20" cols="30" placeholder="Enter message"></textarea></p> <br>
                     <button>Send</button>
                 </div>
                 <div class="box">

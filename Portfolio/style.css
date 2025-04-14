@@ -131,8 +131,12 @@
   }
  #projects{
   height: 500px;
-  padding: 0px;
-  margin: 0px;
+  padding: 50px;
+  /* margin: 0px; */
+  justify-content: flex-start; 
+  align-items: flex-start; 
+  flex-wrap: wrap; 
+  text-align: left;
  }
  #Skills{
   padding: 50px;
@@ -141,9 +145,10 @@
   padding: 50px;
   display: flex;
   flex-direction: row; 
-  justify-content: center; 
-  align-items: center; 
+  justify-content: flex-start; 
+  align-items: flex-start; 
   flex-wrap: wrap; 
+  text-align: left;
 }
 
 #About img {
@@ -155,7 +160,7 @@
   padding: 50px;
  }
  .box{
-  height: 300px;
+  height: 280px;
   transform: translateY(-15px);
   flex: 1 1 calc(33.333% - 20px);
   margin: 10px;
@@ -166,7 +171,7 @@
  }
  
 .box:hover {
-  transform: scale(1.05);
+  transform: scale(1.08);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
  .box img {
@@ -214,5 +219,5 @@
 }
 
 .linkedin-button:hover {
-    transform: scale(1.05); 
+    transform: scale(1.10); 
 }

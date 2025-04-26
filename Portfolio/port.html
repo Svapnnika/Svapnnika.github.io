@@ -1,189 +1,761 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Svapnnika Marri</title>
+  <link rel="icon" href="https://img.icons8.com/ios-filled/50/ffffff/user.png" type="image/png" />
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  <!-- AOS CSS -->
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  <!-- Typed.js -->
+  <script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.12"></script>
+  <!-- Font Awesome for Social Icons (optional, you can remove if you prefer text icons) -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+  
+  <style>
+    /*<!-- Dark Mode Styling -->*/
+    body.dark-mode {
+          background-color: #121212;
+      color: #e0e0e0;
+    }
+    body.dark-mode header,
+    body.dark-mode .box,
+    body.dark-mode #contact {
+      background-color: #1e1e1e !important;
+      color: #fff;
+    }
+    body.dark-mode header a {
+      color: #fff;
+    }
+    body.dark-mode .box a {
+      color: #f48fb1;
+    }
+    body.dark-mode .box a:hover {
+      color: #ce93d8;
+    }
+    /* CSS Variables for Theme Colors */
+    :root {
+      --primary-color: #1d3557;
+      --accent-color: #e63946;
+      --light-color: #f1faee;
+      --bg-color: #f9f9f9;
+      --text-color: #333;
+      --card-shadow: rgba(0, 0, 0, 0.1);
+    }
+
+    /* Global Reset & Base Styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-color);
+      background-color: var(--bg-color);
+      line-height: 1.6;
+    }
+    a {
+      text-decoration: none;
+    }
+    img {
+      max-width: 100%;
+      display: block;
+    }
+    .container {
+      width: 90%;
+      max-width: 1200px;
+      margin: auto;
+    }
+    
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 15px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #ddd;
+      z-index: 1000;
+      backdrop-filter: blur(5px);
+      animation: fadeInDown 1s ease forwards;
+    }
+    header h1 {
+      font-size: 1.7rem;
+      color: var(--accent-color);
+    }
+    header ul {
+      list-style: none;
+      display: flex;
+      gap: 20px;
+    }
+    header a {
+      color: var(--text-color);
+      font-weight: 500;
+      position: relative;
+      transition: color 0.3s;
+    }
+    header a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -4px;
+      width: 0;
+      height: 2px;
+      background: var(--accent-color);
+      transition: width 0.3s;
+    }
+    header a:hover::after {
+      width: 100%;
+    }
+    header a:hover {
+      color: var(--accent-color);
+    }
+    
+    /* Hero Section */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      padding: 100px 0;
+      flex-wrap: wrap;
+      border-radius: 15px;
+      margin: 40px 0;
+      /* background: linear-gradient(135deg, var(--primary-color) 0%, var(--accent-color) 100%); */
+      background: linear-gradient(135deg, #e0986f 0%, #021a51 100%);
+      /* background: #48afe6; */
+      color: white;
+    }
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: inherit;
+      filter: blur(80px);
+      transform: rotate(45deg);
+      z-index: 0;
+    }
+    .hero-text {
+      position: relative;
+      z-index: 1;
+      max-width: 600px;
+      padding: 0 20px;
+    }
+    .hero-text h1 {
+      font-size: 3rem;
+      margin-bottom: 20px;
+    }
+    .hero-text p {
+      font-size: 1.1rem;
+      margin-bottom: 30px;
+    }
+    .hero-text button {
+  padding: 12px 30px;
+  margin-right: 15px;
+  background-color: white; /* Change background color to white */
+  color: var(--primary-color); /* Text color */
+  border: none;
+  border-radius: 30px;
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.hero-text button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+    .hero img {
+      position: relative;
+      z-index: 1;
+      border-radius: 20px;
+      max-width: 400px;
+      width: 100%;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      transition: transform 0.3s;
+    }
+    .hero img:hover {
+      transform: scale(1.05);
+    }
+    
+    /* Section Headings */
+    .row h1 {
+      text-align: center;
+      margin-bottom: 40px;
+      color: var(--primary-color);
+      animation: fadeInUp 1s ease forwards;
+    }
+    .row {
+      padding: 80px 0;
+      opacity: 0;
+      animation: fadeInUp 1s ease forwards;
+      animation-delay: 0.5s;
+    }
+    
+    /* Grid Layouts for Projects & Services */
+    .projects, .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 30px;
+    }
+    .box {
+      background-color: white;
+      padding: 25px;
+      border-radius: 15px;
+      box-shadow: 0 5px 15px var(--card-shadow);
+      transition: transform 0.3s, box-shadow 0.3s;
+      min-height: 200px;
+    }
+    .box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+    .box a {
+      font-weight: 600;
+      color: var(--accent-color);
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    .box a:hover {
+      color: var(--primary-color);
+    }
+    .box p {
+      margin-top: 15px;
+      font-size: 0.95rem;
+    }
+
+    /* About Section */
+#about {
+  padding: 60px 20px;
+  background-color: #f9f9f9;
+  text-align: center;
+}
+
+#about h1 {
+  font-size: 2.5rem;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+#about h3 {
+  margin: 20px auto;
+  font-weight: 400;
+  font-size: 1.2rem;
+  color: #555;
+  max-width: 700px;
+  line-height: 1.6;
+}
+
+#about h2 {
+  margin-top: 40px;
+  font-size: 2rem;
+  color: #222;
+}
+
+.about-desc {
+  max-width: 800px;
+  margin: 1.5rem auto;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  color: #444;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  text-align: center;
+  padding: 0 1rem;
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeInUp 1.2s ease-out forwards;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-top: 30px;
+  justify-content: center;
+  align-items: center;
+}
+
+.skills img {
+  width: 55px;
+  height: 55px;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.1));
+}
+
+.skills img:hover {
+  transform: scale(1.15) rotate(2deg);
+  filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.2));
+}
+
+/* Animation Keyframes */
+@keyframes fadeInUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Contact Section */
+#contact {
+  background-color:whitesmoke;
+  border-radius: 15px;
+  padding: 60px 20px;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.section-title {
+  text-align: center;
+  font-size: 32px;
+  margin-bottom: 30px;
+  color: #333;
+}
+
+.contact-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: center;
+}
+
+.contact-items {
+  flex: 1 1 300px;
+}
+
+.contact-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 25px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  transition: transform 0.3s ease;
+}
+
+.contact-item:hover {
+  transform: translateY(-5px);
+}
+
+.contact-item img {
+  width: 40px;
+  height: 40px;
+}
+
+.contact-item h3 {
+  margin: 0;
+  font-size: 18px;
+  color: #222;
+}
+
+.contact-item p {
+  margin: 2px 0;
+  color: #555;
+}
+
+/* Contact Form Styling */
+.contact-form {
+  flex: 1 1 300px;
+  background-color: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.contact-form h3 {
+  margin-bottom: 20px;
+  color: #222;
+  font-size: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 15px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  outline: none;
+  font-size: 15px;
+  transition: border-color 0.3s;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: var(--accent-color);
+}
+
+.contact-form button {
+  padding: 12px 25px;
+  background-color: var(--primary-color);
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+}
+
+.contact-form button:hover {
+  background-color: var(--accent-color);
+  transform: scale(1.05);
+}
+
+/* Footer */
+.footer {
+  text-align: center;
+  padding: 25px 20px;
+  background-color: white;
+  color: #000; /* Changed to black */
+  margin-top: 50px;
+}
+
+
+.footer .social-icons {
+  margin: 15px 0;
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+}
+
+
+.footer .social-icons a {
+  color: #921a22;
+  font-size: 1.3rem;
+  text-decoration: none;
+  transition: transform 0.3s;
+}
+
+.footer .social-icons a:hover {
+  transform: scale(1.1);
+}
+
+.resume-btn {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: white; /* Button background */
+  color: white;              /* Text color */
+  border-radius: 20px;        /* Smooth corners */
+  text-decoration: none;
+  margin-left: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.resume-btn:hover {
+  background-color: white; /* Darker on hover */
+}
+
+    /* Back to Top Button */
+    .back-to-top {
+      position: fixed;
+      right: 20px;
+      bottom: 30px;
+      background-color: var(--accent-color);
+      color: #fff;
+      padding: 10px 15px;
+      border-radius: 50%;
+      display: none;
+      cursor: pointer;
+      box-shadow: 0 4px 10px rgba(249, 247, 247, 0.3);
+      transition: transform 0.3s;
+      z-index: 1000;
+    }
+    .back-to-top:hover {
+      transform: scale(1.1);
+    }
+
+    
+
+    /* Animations */
+    @keyframes fadeInUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    @keyframes fadeInDown {
+      from { opacity: 0; transform: translateY(-20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Responsive Enhancements */
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+      header ul {
+        gap: 15px;
+      }
+      .contact-wrapper {
+        flex-direction: column;
+        align-items: center;
+      }
+    }
+    /* Enable smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Fade-in animation for sections */
+section {
+  opacity: 0;
+  transform: translateY(50px);
+  transition: all 0.6s ease-out;
+}
+
+section.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+  </style>
 </head>
-
 <body>
-    <div class="container">
-        <div class="header-row">
-            <h1 style="color: aliceblue;">Svapnnika's Portfolio</h1> <br>
-            <div class="b">
-                <ul>
-                    <li><a href="#Home"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="#projects"><i class="fas fa-project-diagram"></i> Projects</a></li>
-                    <li><a href="#Skills"><i class="fas fa-concierge-bell"></i> Services</a></li>
-                    <li><a href="#About"><i class="fas fa-user"></i> About</a></li>
-                    <li><a href="#Contact"><i class="fas fa-envelope"></i> Contact</a></li>
-                </ul>
-            </div>
-        </div>
-        <div id="part1" style="display: flex; align-items: center;">
-            <div id="info" style="flex: 1;">
-                <pre>
-                <div class="caro">
-                    <span class="caro-text"></span>
-                </div>
-                </pre>
-                <div>
-                    <div class="linkedin-button">
-                        <a href="https://www.linkedin.com/in/svapnnika-marri-22bab6242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-                            <button>
-                                <i class="fab fa-linkedin" style="margin-right: 8px;"></i> LinkedIn Profile
-                            </button>
-                        </a>
-                    </div>
-                    <div class="linkedin-button">
-                        <a href="https://github.com/Svapnnika" target="_blank">
-                            <button>
-                                <i class="fab fa-github" style="margin-right: 8px;"></i> GitHub Profile
-                            </button>
-                        </a>
-                    </div>
-                    <div class="linkedin-button">
-                        <a href="path/to/your/resume.pdf" target="_blank">
-                            <button>
-                                <i class="fas fa-file-alt" style="margin-right: 8px;"></i> Resume
-                            </button>
-                        </a>
-                    </div>
-                </div>
-                <div style="flex: 1;">
-                    <img src="pic.jpg" alt="svapnnika" height="300px" width="500px">
-                </div>
-            </div>
-            
-        </div>
-        
-        <!-- <div id="part1">
-            <div id="info">
-                <pre>
-                <div class="caro">
-                    <span class="caro-text"></span>
-                </div>
-                </pre>
-                <div>
-                    <img src="pic.jpg" alt="svapnnika" height="300px" width="400px">
-                </div>
-                <div>
-                    <a href="https://www.linkedin.com/in/svapnnika-marri-22bab6242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app" target="_blank">
-                        <button  class="linkedin-button">
-                            <i class="fab fa-linkedin" style="margin-right: 8px;"></i> LinkedIn Profile
-                        </button>
-                    </a>
-                    <a href="https://github.com/Svapnnika" target="_blank">
-                        <button  class="linkedin-button">
-                            <i class="fab fa-github" style="margin-right: 8px;"></i> GitHub  Profile
-                        </button>
-                    </a>
-                </div>
-            </div>
-        </div> -->
-        <div id="projects" class="row" style="background-color: rgb(179, 188, 188); text-align: justify;">
-            <h1 style="text-decoration: underline;">My Projects</h1> <br>
-            <div style="display: flex;">
-                <div class="box">
-                    <img src="ice.webp" height="150px" width="220px">
-                    <h3><a href="project1/proj1.html">Project 1</a></h3> <br>
-                </div>
-                <div class="box">
-                    <img src="bank.webp" height="220px" width="200px">
-                    <h3><a href="project2/proj2.html">Project 2</a></h3> <br>
-                </div>
-                <div class="box">
-                    <img src="laptop.webp" height="220px" width="200px">
-                    <h3><a href="project3/proj3.html">Project 3</a></h3> <br>
-                </div>
-                <div class="box">
-                    <img src="college.webp" height="220px" width="200px">
-                    <h3><a href="project4/index.html">Project 4</a></h3> <br>
-                </div>
-                <div class="box">
-                    <img src="social.webp" height="220px" width="200px">
-                    <h3><a href="project5/proj5.html">Project 5</a></h3> <br>
-                </div>
-                <div class="box">
-                    <img src="car.webp" height="220px" width="200px">
-                    <h3><a href=" https://svapnnika.github.io/my-app-b-build/">Project 6</a></h3> <br>
-                </div>
-                <div class="box">
-                    <img src="watch.webp" height="220px" width="200px">
-                    <h3><a href=" https://svapnnika.github.io/project-7-build/">Project 7</a></h3> <br>
-                </div>
-            </div>
-        </div>
-        <div id="Skills" class="row" style="background-color: rgb(200, 163, 163); text-align: justify ;">
-            <h1 style="text-decoration: underline;">Services</h1> <br>
-            <div style="display: flex">
-                <div class="box">
-                    <h3 style="text-decoration: underline;">Full stack Developer</h3> <br>
-                    <img src="full stack.webp" alt="developer" style="width: 300px; height:200px">
-                    <p>
-                       FULL STACK WEB DEVELOPER
-                    </p>
-                </div>
-                <div class="box">
-                    <h3 style="text-decoration: underline;">Mobile App Developer</h3> <br>
-                    <img src="mobile app.webp" alt="developer"  style="width: 300px; height:200px">
-                    <p>
-                        MOBILE APP DEVELOPER
-                    </p>
-                </div>
-                <div class="box">
-                    <h3 style="text-decoration: underline;">Backened Developer</h3> <br>
-                    <img src="backend.webp" alt="developer" style="width: 300px; height:200px">
-                    <p>
-                        BACKEND DEVELOPER
-                    </p>
-                </div>
-            </div>
-        </div>
-        <div id="About" class="row" style="background-color: rgb(178, 165, 185); text-align: justify;">
-            <h1 style="text-decoration: underline">About</h1> <br>
-            <h3>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, totam. Debitis porro molestiae
-                odit aspernatur. Excepturi officia molestias architecto explicabo.
-            </h3> <br><br>
-            <h1 style="text-decoration: underline;">Skills</h1> <br>
-            <img src="Java-Logo.svg" width="50px" height="80px">
-            <img src="c logo.jpg" width="60px" height="80px">
-            <img src="power bi.avif" width="60px" height="80px">
-            <img src="sql.jpg" width="60px" height="80px">
+    <script>
+        // Reveal sections when they come into view
+        window.addEventListener('scroll', function() {
+          const sections = document.querySelectorAll('section');
+          const viewportHeight = window.innerHeight;
+          
+          sections.forEach(section => {
+            const sectionTop = section.getBoundingClientRect().top;
+            if (sectionTop < viewportHeight - 150) {
+              section.classList.add('visible');
+            } else {
+              section.classList.remove('visible');
+            }
+          });
+        });
+      </script>
+      
+     <!-- Dark Mode Toggle Button -->
+  <button id="darkModeToggle" style="position:fixed; bottom:75px; right:20px; z-index:1001; padding:10px; border-radius:10px; border:none; cursor:pointer; background-color:#222; color:#fff;">🌙</button>
 
+  <div class="container">
+    <!-- Header -->
+    <header>
+      <h1>Svapnnika Marri</h1>
+      <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-text">
+          <h1>Hi, I'm <span id="typed"></span></h1>
+          <p>I build responsive and interactive web pages that offer great user experiences.</p>
+          <button><b>Hire Me</b></button>
+          <a href="assets/documents/Svapnnika-Marri-Resume.pdf" class="cta resume-btn" style="margin-left: 10px;text-decoration-color:white;color: black" download>Download Resume</a>
         </div>
-        <div id="Contact" class="row" style="background-color: rgb(133, 169, 155); text-align: justify;">
-            <h1 style="text-decoration: underline;">Contact</h1>
-            <div style="display:flex">
-                <div class="box">
-                    <p>Name:<input type="text" placeholder="Enter Name: "></p> <br>
-                    <p>Email:<input type="email" placeholder="Enter Email: "></p> <br>
-                    <p>Enter message:<textarea row="20" cols="30" placeholder="Enter message"></textarea></p> <br>
-                    <button>Send</button>
-                </div>
-                <div class="box">
-                    <h3 style="text-decoration: underline;">Your Company Name</h3> <br>
-                    <p>
-                        <b>Address: </b> Lorem ipsum dolor sit amet consectetur adipisicing elit. Quas, totam. Debitis
-                        porro molestiae
-                        odit aspernatur. Excepturi officia molestias architecto explicabo.
-                    </p> <br>
-                    <p>
-                        <b>Email Address: </b> svapnnikamarri@gmail.com
-                    </p> <br>
-                    <p>
-                        <b>Phone Number: </b>+91 635 377 6733
-                    </p> <br>
-                </div>
-            </div>
-        </div>
-        <div class="footer">@copyright 2024. All rights reserved.</div>
+        <img src="https://imgs.search.brave.com/idwEwB2JoLabumB3GxxBuNyRDHRcvp5DR4U2kmbc-Gk/rs:fit:860:0:0:0/g:ce/aHR0cHM6Ly9tZWRp/YS5nZXR0eWltYWdl/cy5jb20vaWQvMTM1/Nzk0ODA0NC9waG90/by9hLWJlYXV0aWZ1/bC1hZnJpY2FuLWFt/ZXJpY2FuLWZlbWFs/ZS13b3JraW5nLW9u/bGluZS1vbi1oZXIt/bGFwdG9wLmpwZz9z/PTYxMng2MTImdz0w/Jms9MjAmYz1jM2lj/bG9pZjR5WmtySEs3/RXRBQnlsdEpuY1VD/UjNWQU9qWTQ3RExP/QVZFPQ" alt="Profile Image" />
+      </section>
+      
+<!-- Add AOS initialization and dark mode + Typed.js script -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true
+  });
+</script>
+
+<!-- Scripts -->
+<script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 1000,
+    once: true,
+  });
+</script>
+
+<!-- Dark Mode Toggle -->
+<script>
+    const toggleButton = document.getElementById('darkModeToggle');
+    toggleButton.addEventListener('click', () => {
+      document.body.classList.toggle('dark-mode');
+      toggleButton.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
+    });
+  </script>
+  
+
+<!-- Typed.js for dynamic typing -->
+<script>
+    const typed = new Typed('#typed', {
+      strings: ["Svapnnika Marri."],
+      typeSpeed: 80,
+      backSpeed: 65,
+      loop: true
+    });
+  </script>
+  
+   <!-- Projects Section -->
+<section id="projects" class="row">
+    <h1>Projects</h1>
+    <div class="projects">
+      <div class="box">
+        <a href="https://snehika22.github.io/MyStore1/index.html" target="_blank">Mystore</a>
+        <p>A user-friendly e-commerce website showcasing a diverse range of products with a seamless shopping experience. Features include product categorization, a shopping cart, and a responsive design.</p>
+      </div>
+      <div class="box">
+        <a href="https://snehika22.github.io/mybank/index.html" target="_blank">MyBank</a>
+        <p>A basic online banking system designed to manage user accounts and transactions. It highlights essential banking functionalities with a clean and intuitive interface.</p>
+      </div>
+      <div class="box">
+        <a href="https://snehika22.github.io/temp/temp23.html" target="_blank">Simple Portfolio</a>
+        <p>A dynamic web application with a focus on data visualization or temporary data storage solutions. It includes innovative features to showcase real-time or session-based information.</p>
+      </div>
+      <div class="box">
+        <a href="https://snehika22.github.io/mystore2/index.html" target="_blank">Store</a>
+        <p>A prototype or experimental platform showcasing advanced web development concepts. It serves as a sandbox for testing new UI/UX designs and features.</p>
+      </div>
+      <div class="box">
+        <a href="https://snehika22.github.io/temp/temp14.html" target="_blank">Social Media</a>
+        <p>A vibrant social networking platform allowing users to connect, share posts, and interact. It includes essential social media functionalities like commenting and liking.</p>
+      </div>
+      <div class="box">
+        <a href="https://snehika22.github.io/react-store-builder/index.html" target="_blank">React Store</a>
+        <p>A modern e-commerce platform built with React.js, offering a sleek UI, dynamic components, and fast performance. It demonstrates expertise in single-page application development.</p>
+      </div>
+      <div class="box">
+        <a href="#" target="_blank">Sample Vite Project</a>
+        <p>Vite JS is majorly used to set up a development environment for various frameworks like React and Vue, and even for a Vanilla JavaScript app with a dev server and hot reloading.</p>
+      </div>
     </div>
-    <script src="port.js"></script>
-</body>
+  </section>
+  
 
+
+    <!-- Services Section -->
+<section id="services" class="row">
+    <h1>Services</h1>
+    <div class="services">
+      <div class="box">
+        <i class="fas fa-code fa-2x" style="color: var(--accent-color); margin-bottom: 10px;"></i>
+        <h3>Web Development</h3>
+        <p>Custom websites and web applications tailored to your business needs using modern technologies.</p>
+      </div>
+      <div class="box">
+        <i class="fas fa-laptop-code fa-2x" style="color: var(--accent-color); margin-bottom: 10px;"></i>
+        <h3>Responsive Design</h3>
+        <p>Mobile-friendly websites that look great and perform well on any screen size or device.</p>
+      </div>
+    </div>
+  </section>
+  
+
+    <!-- About Section -->
+    <section id="about" class="row">
+        <h1>About</h1>
+        <h3>I’m passionate about solving real-world challenges with code. I love creating full-stack solutions that are both efficient and visually appealing.</h3>
+        
+        <p class="about-desc fade-in">
+            I'm a Front End Developer who enjoys turning ideas into delightful digital experiences. I specialize in crafting clean, responsive websites using HTML, CSS, JavaScript, and React. Whether I’m building from scratch or refining a design, I love combining creativity with logic to make web interfaces that are both intuitive and engaging. I also enjoy working in collaborative teams where ideas flow freely and everyone pushes each other to do their best work.
+          </p>
+          
+      <h2>Skills</h2>
+      <div class="skills">
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java" title="Java" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python" title="Python" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React" title="React" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" alt="HTML5" title="HTML5" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" alt="CSS3" title="CSS3" />
+        <img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript" title="JavaScript" />
+      </div>
+    </section>
+
+ <!-- Contact Section -->
+<section id="contact">
+    <div class="contact container" style="padding: 40px; font-family: 'Segoe UI', sans-serif;">
+      <div>
+        <h1 class="section-title" style="text-align: center; font-size: 32px;">
+          Contact <span style="color: #3498db;">Info</span>
+        </h1>
+      </div>
+  
+      <div class="contact-content" style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: center; margin-top: 30px;">
+        
+        <!-- Contact Info -->
+        <div class="contact-items" style="flex: 1; min-width: 300px;">
+          <div class="contact-item" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <img src="https://img.icons8.com/color/50/000000/phone.png" alt="Phone Icon" />
+            <div>
+              <h3 style="margin: 0;">Phone</h3>
+              <p style="margin: 2px 0;">+91 9959068500</p>
+            </div>
+          </div>
+          <div class="contact-item" style="display: flex; align-items: center; gap: 15px; margin-bottom: 20px;">
+            <img src="https://img.icons8.com/color/50/000000/email.png" alt="Email Icon" />
+            <div>
+              <h3 style="margin: 0;">Email</h3>
+              <p style="margin: 2px 0;">svapnnikavarma@email.com</p>
+            </div>
+          </div>
+          <div class="contact-item" style="display: flex; align-items: center; gap: 15px;">
+            <img src="https://img.icons8.com/color/50/000000/marker.png" alt="Location Icon" />
+            <div>
+              <h3 style="margin: 0;">Address</h3>
+              <p style="margin: 2px 0;">Hyderabad, India</p>
+            </div>
+          </div>
+        </div>
+  
+        <!-- Contact Form -->
+        <div class="contact-form" style="flex: 1; min-width: 300px;">
+          <h3 style="margin-bottom: 15px;">Send a Message</h3>
+          <form>
+            <input type="text" placeholder="Enter Name" required style="width: 100%; padding: 10px; margin-bottom: 10px;" />
+            <input type="email" placeholder="Enter Email" required style="width: 100%; padding: 10px; margin-bottom: 10px;" />
+            <textarea rows="5" placeholder="Enter Message" required style="width: 100%; padding: 10px; margin-bottom: 10px;"></textarea>
+            <button type="submit" style="padding: 10px 20px; background-color: #3498db; color: white; border: none; cursor: pointer;">Send</button>
+          </form>
+        </div>
+  
+      </div>
+    </div>
+  </section>
+  <!-- End Contact Section -->
+  
+  
+    <!-- Footer -->
+    <footer class="footer">
+        <h2 style="color: #61063476; font-family: 'Georgia', serif; font-style: italic;">Snehika Biyyala</h2>
+      <div class="social-icons">
+        <a href="https://github.com/snehika22" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+        <a href="https://www.linkedin.com/in/snehika-biyyala-1264a0283/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        <a href="mailto:snehikab22@email.com" title="Email"><i class="fas fa-envelope"></i></a>
+      </div>
+      <p>&copy; Copyright 2024 Snehika| All rights reserved.<a href="#contact">Contact Me</a></p>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" onclick="window.scrollTo(0, 0)">↑</button>
+
+    <script>
+      // Back to Top Button Visibility
+      window.addEventListener("scroll", () => {
+        const button = document.querySelector(".back-to-top");
+        if (window.scrollY > 300) {
+          button.style.display = "block";
+        } else {
+          button.style.display = "none";
+        }
+      });
+    </script>
+  </div>
+</body>
 </html>

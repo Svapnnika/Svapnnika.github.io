@@ -617,7 +617,8 @@
     <!-- Hero Section -->
     <section id="home" class="hero">
       <div class="hero-text">
-        <h1>Hi, I'm <span id="typed"></span></h1>
+        <h1>Hi, I'm Svapnnika Marri</h1>
+        <h1><span id="typed"></span></h1>
         <p>I build responsive and interactive web pages that offer great user experiences.</p>
         <button><b>Hire Me</b></button>
         <a href="assets/documents/Svapnnika-Marri-Resume.pdf" class="cta resume-btn"
@@ -647,7 +648,18 @@
     <!-- Dark Mode Toggle -->
     <script>
       const toggleButton = document.getElementById('darkModeToggle');
-      toggleButton.addEventListener('click', () => {
+      
+const savedMode = localStorage.getItem("darkMode");
+if (savedMode === "true") {
+  document.body.classList.add("dark-mode");
+  toggleButton.innerHTML = '<i class="fas fa-sun"></i>';
+}
+toggleButton.addEventListener('click', () => {
+  document.body.classList.toggle('dark-mode');
+  const darkEnabled = document.body.classList.contains('dark-mode');
+  toggleButton.innerHTML = darkEnabled ? '<i class="fas fa-sun"></i>' : '<i class="fas fa-moon"></i>';
+  localStorage.setItem("darkMode", darkEnabled);
+
         document.body.classList.toggle('dark-mode');
         toggleButton.textContent = document.body.classList.contains('dark-mode') ? '☀️' : '🌙';
       });
@@ -657,7 +669,7 @@
     <!-- Typed.js for dynamic typing -->
     <script>
       const typed = new Typed('#typed', {
-        strings: ["Svapnnika Marri."],
+        strings: ["Frontend Developer.", "React Enthusiast.", "Tech Explorer."],
         typeSpeed: 80,
         backSpeed: 65,
         loop: true
@@ -706,11 +718,22 @@
             even for a Vanilla JavaScript app with a dev server and hot reloading.</p>
         </div>
       </div>
-    </section>
+    
+</section>
 
+<!-- Blog Section -->
+<section id="blog" class="row">
+  <h1>Blog</h1>
+  <div class="projects">
+    <div class="box">
+      <a href="https://medium.com/@svapnnikavarma" target="_blank">Latest Articles</a>
+      <p>Explore my thoughts on web development, project building, and emerging tech trends.</p>
+    </div>
+  </div>
+</section>
 
+<!-- Services Section -->
 
-    <!-- Services Section -->
     <section id="services" class="row">
       <h1>Services</h1>
       <div class="services">
